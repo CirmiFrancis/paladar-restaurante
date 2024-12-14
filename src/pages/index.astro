@@ -8,8 +8,9 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
     <main>
         <Hero />
-        <Dishes />
         <About />
+        <Dishes />
+        <button id="backToTop">↑</button>
     </main>
 </Layout>
 
@@ -18,4 +19,44 @@ import Layout from '../layouts/Layout.astro';
         background: rgb(54,67,80);
         background: linear-gradient(180deg, rgba(54,67,80,1) 0%, rgb(80, 80, 80) 50%, rgb(160, 160, 160) 100%);
     }
+
+    #backToTop {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        background-color: #d1e3ff;
+        border: none;
+        border-radius: 32px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.25s;
+    }
+
+    #backToTop:hover {
+        color: white;
+        background-color: #879cbe;
+    }
 </style>
+
+<script>
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+    });
+
+    backToTopButton?.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    });
+</script>
