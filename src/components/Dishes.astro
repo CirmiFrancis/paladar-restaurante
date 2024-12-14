@@ -1,0 +1,99 @@
+---
+---
+
+<div id="dishes" class="bg-slate-200 px-20">
+    <div class="grid grid-cols-4 py-10 gap-5">
+        <a href="#empanadas">
+            <img id="empanadas-select" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm hover:opacity-75" src="../src/assets/dishes/empanadas.jpg" alt="Foto de empanadas">
+        </a>
+        <a href="#milanesa">
+            <img id="milanesa-select" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm hover:opacity-75" src="../src/assets/dishes/milanesa.jpg" alt="Foto de milanesa"> 
+        </a>
+        <a href="#sorrentinos">
+            <img id="sorrentinos-select" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm hover:opacity-75" src="../src/assets/dishes/sorrentinos.jpg" alt="Foto de sorrentinos">
+        </a>
+        <a href="#flan">
+            <img id="flan-select" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm hover:opacity-75" src="../src/assets/dishes/flan.jpg" alt="Foto de flan">
+        </a>
+    </div>
+</div>
+
+<div class="dishes grid grid-cols-1 px-10 bg-slate-200">
+    <div id="empanadas" class="grid grid-cols-2 py-10">
+        <div class="flex flex-col justify-center align-middle px-20">
+            <h2 class="font-signika text-6xl">Empanada</h2>
+            <p class="font-rubik text-lg pt-5">Las <b>empanadas argentinas</b> son una especialidad culinaria icónica, consistentes en una masa fina rellena con diversos ingredientes, que se cocina al horno o frita. Suelen comerse como entrada. Pueden ser de: carne, pollo, jamón y queso, humita, queso y cebolla, o verdura y queso.</p>
+        </div>
+        <figure class="px-20">
+            <img class="justify-self-end shadow-black shadow-md" src="../src/assets/dishes/empanadas.jpg" alt="Foto de empanadas">
+        </figure>
+    </div>
+
+    <div id="milanesa" class="grid grid-cols-2 py-10">
+        <figure class="px-20">
+            <img class="justify-self-center shadow-black shadow-md" src="../src/assets/dishes/milanesa.jpg" alt="Foto de milanesa">
+        </figure>
+        <div class="flex flex-col justify-center align-middle px-20">
+            <h2 class="font-signika text-6xl">Milanesa</h2>
+            <p class="font-rubik text-lg pt-5">Las <b>milanesas argentinas</b> son un plato emblemático de la gastronomía del país, caracterizado por una fina rebanada de carne (generalmente de res o pollo) empanada y frita o cocida al horno. Suelen estar acompañadas por una guarnición. Recomendamos probar nuestras famosas milanesas napolitanas (c/ salsa de tomate, jamón, queso y orégano).</p>
+        </div>
+    </div>
+
+    <div id="sorrentinos" class="grid grid-cols-2 py-10">
+        <div class="flex flex-col justify-center align-middle px-20">
+            <h2 class="font-signika text-6xl">Sorrentino</h2>
+            <p class="font-rubik text-lg pt-5">Los <b>sorrentinos argentinos</b> son una pasta rellena en forma redonda, similar a los ravioles pero más grandes y con mayor capacidad para contener relleno. Su origen no es italiano, sino una creación local inspirada en la tradición italiana. Pueden ser de: jamón y queso, ricota y espinaca, calabaza y queso, o pollo y verdura.</p>
+        </div>
+        <figure class="px-20">
+            <img class="justify-self-center shadow-black shadow-md" src="../src/assets/dishes/sorrentinos.jpg" alt="Foto de sorrentinos">    
+        </figure>
+    </div>
+
+    <div id="flan" class="grid grid-cols-2 py-10">
+        <figure class="px-20">
+            <img class="justify-self-center shadow-black shadow-md" src="../src/assets/dishes/flan.jpg" alt="Foto de flan">
+        </figure>
+        <div class="flex flex-col justify-center align-middle px-20">
+            <h2 class="font-signika text-6xl">Flan</h2>
+            <p class="font-rubik text-lg pt-5">El <b>flan argentino</b> es uno de los postres más tradicionales y queridos en el país. Se trata de un postre cremoso y firme elaborado principalmente con huevos, leche y azúcar, que se cocina al baño maría y se sirve acompañado de otros clásicos como dulce de leche o crema batida.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    a:hover {
+        transform: scale(1.02); 
+    }
+    img {
+        width: 25rem;
+    }
+</style>
+
+<script>
+    const dishes = [
+        { selectId: "empanadas-select", dishId: "empanadas" },
+        { selectId: "milanesa-select", dishId: "milanesa" },
+        { selectId: "sorrentinos-select", dishId: "sorrentinos" },
+        { selectId: "flan-select", dishId: "flan" }
+    ];
+
+    function updateView() {
+        const currentHash = window.location.hash.replace('#', '');
+
+        dishes.forEach(({ selectId, dishId }) => {
+            const selectedItem = document.getElementById(selectId);
+            const dishSection = document.getElementById(dishId);
+
+            if (dishId === currentHash) {
+                selectedItem?.classList.remove("opacity-50");
+                dishSection?.classList.remove("hidden");
+            } else {
+                selectedItem?.classList.add("opacity-50");
+                dishSection?.classList.add("hidden");
+            }
+        });
+    }
+
+    window.addEventListener("hashchange", updateView);
+    updateView();
+</script>
