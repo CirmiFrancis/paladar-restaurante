@@ -1,0 +1,48 @@
+---
+---
+
+<button id="backToTop">↑</button>
+
+<style>
+    button {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        background-color: #b9cbe8;
+        border: none;
+        border-radius: 32px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.25s;
+    }
+
+    button:hover {
+        color: white;
+        background-color: #879cbe;
+    }
+</style>
+
+<script>
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (backToTopButton) {
+            if (window.scrollY > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        }
+    });
+
+    backToTopButton?.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
