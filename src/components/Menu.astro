@@ -21,7 +21,7 @@
     
     <div class="grid grid-cols-1 px-10">
         <div id="dish" class="grid grid-cols-2">
-            <div class="flex flex-col justify-center align-middle px-20">
+            <div id="dish-info" class="flex flex-col justify-center align-middle px-20">
                 <h3 id="dish-title" class="font-signika text-6xl">Empanadas</h3>
                 <p id="dish-description" class="font-rubik text-lg pt-5">Las empanadas argentinas son una especialidad culinaria icónica, consistentes en una masa fina rellena con diversos ingredientes, que se cocina al horno o frita. Suelen comerse como entrada. Pueden ser de: carne, pollo, jamón y queso, humita, queso y cebolla, o verdura y queso.</p>
             </div>
@@ -131,4 +131,45 @@
                 break;
         }
     }
+
+    // animaciones GSAP
+    import { gsap } from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from("#menu", {
+        rotate: 0,
+        opacity: 0,
+        y: 100,
+        duration: 2,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#menu",
+            start: "top 80%",
+        },
+    });
+
+    gsap.from("#dish-info", {
+        rotate: 0,
+        opacity: 0,
+        x: 100,
+        duration: 2,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#dish-info",
+            start: "top 70%",
+        },
+    });
+
+    gsap.from("#dish-img", {
+        rotate: 0,
+        opacity: 0,
+        x: -100,
+        duration: 3,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#dish-img",
+            start: "top 70%",
+        },
+    });
 </script>

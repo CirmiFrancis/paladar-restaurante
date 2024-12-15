@@ -5,7 +5,7 @@
 
 <style>
     button {
-        display: none;
+        visibility: hidden;    
         position: fixed;
         bottom: 20px;
         left: 20px;
@@ -15,6 +15,7 @@
         background-color: #b9cbe8;
         border: none;
         border-radius: 32px;
+        opacity: 0;
         cursor: pointer;
         z-index: 10;
         transition: all 0.25s;
@@ -32,9 +33,11 @@
     window.addEventListener('scroll', () => {
         if (backToTopButton) {
             if (window.scrollY > 100) {
-                backToTopButton.style.display = 'block';
+                backToTopButton.style.opacity = '1';
+                backToTopButton.style.visibility = 'visible';
             } else {
-                backToTopButton.style.display = 'none';
+                backToTopButton.style.opacity = '0';
+                backToTopButton.style.visibility = 'hidden';
             }
         }
     });
