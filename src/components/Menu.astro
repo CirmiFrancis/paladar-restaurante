@@ -2,19 +2,19 @@
 ---
 
 <div class="bg-slate-200">
-    <div id="dishes" class="px-20">
+    <div id="menu" class="px-20">
         <div class="grid grid-cols-4 gap-5 py-10">
             <button>
-                <img id="empanadas-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm" src="dishes/empanadas.jpg" alt="Foto de empanadas">
+                <img id="empanadas-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm" src="menu/empanadas.jpg" alt="Foto de empanadas">
             </button>
             <button>
-                <img id="milanesa-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="dishes/milanesa.jpg" alt="Foto de milanesa"> 
+                <img id="milanesa-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="menu/milanesa.jpg" alt="Foto de milanesa"> 
             </button>
             <button>
-                <img id="sorrentinos-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="dishes/sorrentinos.jpg" alt="Foto de sorrentinos">
+                <img id="sorrentinos-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="menu/sorrentinos.jpg" alt="Foto de sorrentinos">
             </button>
             <button>
-                <img id="flan-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="dishes/flan.jpg" alt="Foto de flan">
+                <img id="flan-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="menu/flan.jpg" alt="Foto de flan">
             </button>
         </div>
     </div>
@@ -26,11 +26,11 @@
                 <p id="dish-description" class="font-rubik text-lg pt-5">Las empanadas argentinas son una especialidad culinaria icónica, consistentes en una masa fina rellena con diversos ingredientes, que se cocina al horno o frita. Suelen comerse como entrada. Pueden ser de: carne, pollo, jamón y queso, humita, queso y cebolla, o verdura y queso.</p>
             </div>
             <figure class="px-20">
-                <img id="dish-img" class="shadow-black shadow-md" src="dishes/empanadas.jpg" alt="Foto de comida">
+                <img id="dish-img" class="shadow-black shadow-md" src="menu/empanadas.jpg" alt="Foto de comida">
             </figure>
         </div>
         <div class="flex justify-center py-10">
-            <button class="font-rubik text-lg text-slate-700 bg-slate-200 border border-slate-700 rounded-md py-2 px-4 hover:text-slate-200 hover:bg-slate-700 transition duration-250">VER MÁS PLATOS</button>
+            <a href="/menu.jpg" class="font-rubik text-lg text-slate-700 bg-slate-200 border border-slate-700 rounded-md py-2 px-4 hover:text-slate-200 hover:bg-slate-700 transition duration-250" target="_blank">VER MENÚ</a>
         </div>
     </div>
 </div>
@@ -61,22 +61,22 @@
     const empanada: Dish = {
         title: "Empanadas",
         description: "Las empanadas argentinas son una especialidad culinaria icónica, consistentes en una masa fina rellena con diversos ingredientes, que se cocina al horno o frita. Suelen comerse como entrada. Pueden ser de: carne, pollo, jamón y queso, humita, queso y cebolla, o verdura y queso.",
-        img: "dishes/empanadas.jpg"
+        img: "menu/empanadas.jpg"
     }
     const milanesa: Dish = {
         title: "Milanesa",
         description: "Las milanesas argentinas son un plato emblemático de la gastronomía del país, caracterizado por una fina rebanada de carne (generalmente de res o pollo) empanada y frita o cocida al horno. Suelen estar acompañadas por una guarnición. Recomendamos probar nuestras famosas milanesas napolitanas (c/ salsa de tomate, jamón, queso y orégano).",
-        img: "dishes/milanesa.jpg"
+        img: "menu/milanesa.jpg"
     }
     const sorrentino: Dish = {
         title: "Sorrentinos",
         description: "Los sorrentinos argentinos son una pasta rellena en forma redonda, similar a los ravioles pero más grandes y con mayor capacidad para contener relleno. Su origen no es italiano, sino una creación local inspirada en la tradición italiana. Pueden ser de: jamón y queso, ricota y espinaca, calabaza y queso, o pollo y verdura.",
-        img: "dishes/sorrentinos.jpg"
+        img: "menu/sorrentinos.jpg"
     }
     const flan: Dish = {
         title: "Flan",
         description: "El flan argentino es uno de los postres más tradicionales y queridos en el país. Se trata de un postre cremoso y firme elaborado principalmente con huevos, leche y azúcar, que se cocina al baño maría y se sirve acompañado de otros clásicos como dulce de leche o crema batida.",
-        img: "dishes/flan.jpg"
+        img: "menu/flan.jpg"
     }
 
     const empanadas_btn = document.getElementById("empanadas-btn");
