@@ -26,7 +26,7 @@
                 <p id="dish-description" class="font-rubik text-lg pt-5">Las empanadas argentinas son una especialidad culinaria icónica, consistentes en una masa fina rellena con diversos ingredientes, que se cocina al horno o frita. Suelen comerse como entrada. Pueden ser de: carne, pollo, jamón y queso, humita, queso y cebolla, o verdura y queso.</p>
             </div>
             <figure class="px-20">
-                <img id="dish-img" class="justify-self-end shadow-black shadow-md" src="dishes/empanadas.jpg" alt="Foto de comida">
+                <img id="dish-img" class="shadow-black shadow-md" src="dishes/empanadas.jpg" alt="Foto de comida">
             </figure>
         </div>
         <div class="flex justify-center py-10">
@@ -36,14 +36,18 @@
 </div>
 
 <style>
+    img {
+        width: 25rem;
+    }
     button img {
         transition: all 0.25s;
     }
     button img:hover {
         transform: scale(1.02); 
     }
-    img {
-        width: 25rem;
+    figure {
+        display: flex;
+        justify-self: end;
     }
 </style>
 
