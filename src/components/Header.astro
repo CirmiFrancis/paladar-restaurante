@@ -2,13 +2,17 @@
 import Navigation from './Navigation.astro';
 ---
 
-<header class="sticky top-0 z-10 bg-slate-800 lg:static lg:top-auto lg:z-auto">
+<header class="sticky top-0 z-10 lg:static lg:top-auto lg:z-auto">
     <nav>
         <Navigation />
     </nav>
 </header>
 
 <style>    
+    header {
+        background-color: rgb(30, 41, 59, 0.9);
+    }
+
     nav {
         display: flex;
         justify-content: center;
