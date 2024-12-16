@@ -2,7 +2,7 @@
 import Navigation from './Navigation.astro';
 ---
 
-<header class="bg-slate-800">
+<header class="sticky top-0 z-10 bg-slate-800 lg:static lg:top-auto lg:z-auto">
     <nav>
         <Navigation />
     </nav>
@@ -15,5 +15,23 @@ import Navigation from './Navigation.astro';
         align-items: center;
         padding: 1rem 6rem;
         color: white;
+    }
+
+    @media (max-width: 1023.98px) {
+        nav {
+            padding: 1rem 2rem;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        nav {
+            padding: 0.5rem 2rem;
+        }
+    }
+
+    @media (max-width: 425.98px) {
+        nav {
+            padding: 0.7rem 0.5rem 0.7rem 1rem;
+        }
     }
 </style>

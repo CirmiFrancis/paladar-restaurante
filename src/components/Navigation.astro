@@ -2,18 +2,30 @@
 import Logo from "./Logo.astro";
 ---
 
+<!-- Navbar -->
 <div class="justify-center align-middle gap-10 hidden lg:flex">
-    <a class="" href="/">INICIO</a>
+    <a href="/">INICIO</a>
     <a href="#aboutus">NOSOTROS</a>
 </div>
-<Logo size={64} />
+<div class="lg:mx-10">
+    <Logo size={64} />
+</div>
 <div class="justify-center align-middle gap-10 hidden lg:flex">
     <a href="#menu">MENÚ</a>
     <a href="#contact">CONTACTO</a>
 </div>
-<!-- <div class="ms-auto lg:hidden">
-    <img class="invert" src="/svg/burger-menu.svg" alt="Ícono del menú hamburguesa" width="32" height="32">
-</div> -->
+<!-- Navbar Mobile (Menú Hamburguesa) -->
+<div class="ms-auto lg:hidden">
+    <button id="burger-menu">
+        <img class="invert" src="/svg/burger-menu.svg" alt="Ícono del menú hamburguesa" width="32" height="32">
+    </button>
+</div>
+<div id="mobile-menu" class="flex hidden bg-slate-800 lg:hidden">
+    <a href="/">INICIO</a>
+    <a href="#aboutus">NOSOTROS</a>
+    <a href="#menu">MENÚ</a>
+    <a href="#contact">CONTACTO</a>
+</div>
 
 <style>
     a {
@@ -26,4 +38,95 @@ import Logo from "./Logo.astro";
         text-decoration: underline;
         color: rgb(225, 225, 225);
     }
+
+    #burger-menu {
+        padding: 4px;
+        border: 2px solid rgb(255, 255, 255, 0.1);
+        border-radius: 8px;
+        transition: all 0.25s;
+    }
+
+    #burger-menu:focus {
+        border: 2px solid rgb(255, 255, 255, 0.7);
+        border-radius: 8px;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        /* top: 100px; */
+        right: 0;
+        width: 100%;
+        /* height: 200px; */
+        padding-right: 35px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        border-bottom: 1px solid rgb(124, 149, 176);
+        gap: 1rem;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    @media (max-width: 1023.98px) {
+        #mobile-menu {
+            top: 95px;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        #mobile-menu {
+            top: 79px;
+        }
+    }
+
+    @media (max-width: 425.98px) {
+        #mobile-menu {
+            top: 85px;
+            padding-right: 15px;
+        }
+    }
 </style>
+
+<script>
+    // animaciones GSAP
+    import { gsap } from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const burgerMenu = document.getElementById("burger-menu");
+    const burgerMenuImg = burgerMenu?.firstElementChild as HTMLImageElement;
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    let isOpen = false;
+
+    // ocultar el menú al iniciar
+    gsap.set(mobileMenu, { height: 0, overflow: "hidden" });
+
+    // alternar el menú
+    burgerMenu?.addEventListener("click", () => {
+        gsap.to(mobileMenu, {
+            height: isOpen ? 0 : "200px",
+            duration: 0.5,
+            ease: "power2.out",
+            onComplete: () => {
+                // ocultar el menú al cerrarlo
+                if (!isOpen) {
+                    mobileMenu?.classList.add("hidden");
+                    if (burgerMenuImg) {
+                        burgerMenuImg.src = "/svg/burger-menu.svg";
+                    }
+                }
+            },
+            onStart: () => {
+                // mostrar el menú al abrirlo
+                if (isOpen) {
+                    mobileMenu?.classList.remove("hidden");
+                    if (burgerMenuImg) {
+                        burgerMenuImg.src = "/svg/burger-menu-x.svg";
+                    }
+                }
+            },
+        });
+        isOpen = !isOpen;
+    });
+</script>
