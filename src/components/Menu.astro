@@ -138,9 +138,8 @@
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.from("#menu", {
-        rotate: 0,
-        opacity: 0,
         y: 100,
+        opacity: 0,
         duration: 2,
         ease: "power4",
         scrollTrigger: {
@@ -150,11 +149,9 @@
     });
 
     gsap.from("#dish-info", {
-        rotate: 0,
         opacity: 0,
-        x: 100,
-        duration: 3,
-        ease: "power4.out",
+        duration: 4,
+        ease: "power4",
         scrollTrigger: {
             trigger: "#dish-info",
             start: "top 80%",
