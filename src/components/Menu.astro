@@ -2,43 +2,43 @@
 ---
 
 <div class="bg-slate-200">
-    <div id="menu" class="px-20">
-        <div class="grid grid-cols-4 gap-5 py-10">
+    <div id="menu" class="px-0 md:px-10 lg:px-32 xl:px-32 2xl:px-96">
+        <div class="grid grid-cols-2 gap-5 p-6 lg:grid-cols-4 md:p-16 lg:p-4 xl:p-10">
             <button>
-                <img id="empanadas-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm" src="imgs/menu/empanadas.jpg" alt="Foto de empanadas" loading="lazy">
+                <img id="empanadas-btn" class="border-4 border-slate-100 shadow-black shadow-sm rounded-lg md:rounded-2xl" src="imgs/menu/empanadas.jpg" alt="Foto de empanadas" loading="lazy">
             </button>
             <button>
-                <img id="milanesa-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="imgs/menu/milanesa.jpg" alt="Foto de milanesa" loading="lazy"> 
+                <img id="milanesa-btn" class="border-4 border-slate-100 shadow-black shadow-sm rounded-lg md:rounded-2xl opacity-50" src="imgs/menu/milanesa.jpg" alt="Foto de milanesa" loading="lazy"> 
             </button>
             <button>
-                <img id="sorrentinos-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="imgs/menu/sorrentinos.jpg" alt="Foto de sorrentinos" loading="lazy">
+                <img id="sorrentinos-btn" class="border-4 border-slate-100 shadow-black shadow-sm rounded-lg md:rounded-2xl opacity-50" src="imgs/menu/sorrentinos.jpg" alt="Foto de sorrentinos" loading="lazy">
             </button>
             <button>
-                <img id="flan-btn" class="border-4 border-slate-100 rounded-2xl shadow-black shadow-sm opacity-50" src="imgs/menu/flan.jpg" alt="Foto de flan" loading="lazy">
+                <img id="flan-btn" class="border-4 border-slate-100 shadow-black shadow-sm rounded-lg md:rounded-2xl opacity-50" src="imgs/menu/flan.jpg" alt="Foto de flan" loading="lazy">
             </button>
         </div>
     </div>
     
-    <div class="grid grid-cols-1 px-10">
-        <div id="dish" class="grid grid-cols-2">
-            <div id="dish-info" class="flex flex-col justify-center align-middle px-20">
-                <h3 id="dish-title" class="font-signika text-6xl">Empanadas</h3>
-                <p id="dish-description" class="font-rubik text-lg pt-5">Las empanadas argentinas son una especialidad culinaria icónica, consistentes en una masa fina rellena con diversos ingredientes, que se cocina al horno o frita. Suelen comerse como entrada. Pueden ser de: carne, pollo, jamón y queso, humita, queso y cebolla, o verdura y queso.</p>
+    <div class="grid grid-cols-1 md:px-10 lg:px-28 xl:px-60 2xl:px-96 lg:pt-4 xl:pt-0">
+        <div id="dish" class="grid grid-cols-1">
+            <div id="dish-info" class="flex flex-col justify-center align-middle px-10 md:px-20">
+                <h3 id="dish-title" class="font-signika text-4xl md:text-5xl lg:text-4xl xl:text-5xl">Empanadas</h3>
+                <p id="dish-description" class="font-rubik text-justify text-base pt-2 md:text-lg lg:text-base xl:text-lg">Las empanadas argentinas son una especialidad culinaria icónica, consistentes en una masa fina rellena con diversos ingredientes, que se cocina al horno o frita. Suelen comerse como entrada. Pueden ser de: carne, pollo, jamón y queso, humita, queso y cebolla, o verdura y queso.</p>
             </div>
-            <figure class="px-20">
+            <!-- <figure class="px-20">
                 <img id="dish-img" class="shadow-black shadow-md" src="imgs/menu/empanadas.jpg" alt="Foto de comida" loading="lazy">
-            </figure>
+            </figure> -->
         </div>
-        <div class="flex justify-center py-10">
-            <a href="imgs/menu/menu.jpg" class="font-rubik text-lg text-slate-700 bg-slate-200 border border-slate-700 rounded-md py-2 px-4 hover:text-slate-200 hover:bg-slate-700 transition duration-250" target="_blank">VER MENÚ</a>
+        <div class="flex justify-center py-6 md:py-16 lg:pb-4 lg:pt-8 xl:pb-10 xl:pt-10">
+            <a href="imgs/menu/menu.jpg" class="font-rubik text-base text-slate-700 bg-slate-200 border border-slate-700 rounded-md py-2 px-4 hover:text-slate-200 hover:bg-slate-700 transition duration-250 md:text-lg xl:text-xl" target="_blank">VER MENÚ</a>
         </div>
     </div>
 </div>
 
 <style>
-    img {
+    /* img {
         width: 25rem;
-    }
+    } */
     button img {
         transition: all 0.25s;
     }
@@ -153,23 +153,23 @@
         rotate: 0,
         opacity: 0,
         x: 100,
-        duration: 2,
-        ease: "power4",
+        duration: 3,
+        ease: "power4.out",
         scrollTrigger: {
             trigger: "#dish-info",
-            start: "top 70%",
+            start: "top 80%",
         },
     });
 
-    gsap.from("#dish-img", {
-        rotate: 0,
-        opacity: 0,
-        x: -100,
-        duration: 3,
-        ease: "power4",
-        scrollTrigger: {
-            trigger: "#dish-img",
-            start: "top 70%",
-        },
-    });
+    // gsap.from("#dish-img", {
+    //     rotate: 0,
+    //     opacity: 0,
+    //     x: -100,
+    //     duration: 3,
+    //     ease: "power4",
+    //     scrollTrigger: {
+    //         trigger: "#dish-img",
+    //         start: "top 70%",
+    //     },
+    // });
 </script>
