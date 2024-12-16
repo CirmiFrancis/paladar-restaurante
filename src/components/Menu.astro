@@ -2,7 +2,10 @@
 ---
 
 <div class="bg-slate-200">
-    <div id="menu" class="px-0 md:px-10 lg:px-32 xl:px-32 2xl:px-96">
+    <div id="menu" class="bg-slate-200">
+        <div class="w-0 h-0 mx-auto border-l-[30px] border-r-[30px] border-t-[30px] border-l-transparent border-r-transparent border-t-slate-900"></div>
+    </div>
+    <div id="dishes" class="px-0 md:px-10 lg:px-32 xl:px-32 2xl:px-96">
         <div class="grid grid-cols-2 gap-5 p-6 lg:grid-cols-4 md:p-16 lg:p-4 xl:p-10">
             <button>
                 <img id="empanadas-btn" class="border-4 border-slate-100 shadow-black shadow-sm rounded-lg md:rounded-2xl" src="imgs/menu/empanadas.jpg" alt="Foto de empanadas" loading="lazy">
@@ -36,9 +39,6 @@
 </div>
 
 <style>
-    /* img {
-        width: 25rem;
-    } */
     button img {
         transition: all 0.25s;
     }
@@ -137,14 +137,14 @@
     import ScrollTrigger from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from("#menu", {
+    gsap.from("#dishes", {
         y: 100,
         opacity: 0,
         duration: 2,
         ease: "power4",
         scrollTrigger: {
-            trigger: "#menu",
-            start: "top 80%",
+            trigger: "#dishes",
+            start: "top 90%",
         },
     });
 

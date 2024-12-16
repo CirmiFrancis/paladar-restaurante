@@ -2,15 +2,18 @@
 import Logo from "./Logo.astro";
 ---
 
-<div class="flex justify-center align-middle gap-10">
+<div class="justify-center align-middle gap-10 hidden lg:flex">
     <a class="" href="/">INICIO</a>
     <a href="#aboutus">NOSOTROS</a>
 </div>
 <Logo size={64} />
-<div class="flex justify-center align-middle gap-10">
+<div class="justify-center align-middle gap-10 hidden lg:flex">
     <a href="#menu">MENÚ</a>
     <a href="#contact">CONTACTO</a>
 </div>
+<!-- <div class="ms-auto lg:hidden">
+    <img class="invert" src="/svg/burger-menu.svg" alt="Ícono del menú hamburguesa" width="32" height="32">
+</div> -->
 
 <style>
     a {
