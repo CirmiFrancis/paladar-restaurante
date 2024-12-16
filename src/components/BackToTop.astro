@@ -1,7 +1,9 @@
 ---
 ---
 
-<button id="backToTop">↑</button>
+<button id="backToTop">
+    <img class="invert" src="/svg/backToTop.svg" alt="" width="32">
+</button>
 
 <style>
     button {
@@ -9,21 +11,16 @@
         position: fixed;
         bottom: 20px;
         left: 20px;
-        padding: 10px 15px;
-        font-size: 16px;
-        color: rgb(0, 0, 0);
-        background-color: #b9cbe8;
-        border: none;
+        background-color: #394e6f;
+        border: 2px solid #394e6f;
         border-radius: 32px;
         opacity: 0;
-        cursor: pointer;
         z-index: 10;
         transition: all 0.25s;
     }
 
     button:hover {
-        color: white;
-        background-color: #879cbe;
+        box-shadow: #62799e 0px 0px 8px;
     }
 </style>
 
